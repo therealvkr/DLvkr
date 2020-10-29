@@ -9,11 +9,10 @@ $llocf = urlencode($video_id);
  <html lang="en">
 <head>
   <title> DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..</title>
-    <link rel="icon" href="suramshivareddy.com/photo.png" type="image/gif">
-    <meta name="author" content="Suram ShivaReddy" />
-    <meta name="keywords"  content="ShivaReddy, Suram ShivaReddy, Suram Shiva, Shiva R'dy,youtube downloader, youtube downloader script using php" />
-<meta name="description" content="I'm Suram ShivaReddy a Webdeveloper from India (Hyderabad). If you are looking for a
-good looking Responsive website, I can help you with it">
+    <link rel="icon" href="/logo.png" type="image/png">
+    <meta name="author" content="itsmethevkr" />
+    <meta name="keywords"  content="DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats .." />
+<meta name="description" content="DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,13 +43,13 @@ cursor:pointer;
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="http://www.suramshivareddy.com/youtube.php">
-   <p style="text-align:center;color:black;margin-top:-5px;"class="lead"> Youtube Downloader</p>
+      <a class="navbar-brand" href="/">
+   <p style="text-align:center;color:black;margin-top:-5px;"class="lead"> DLvkr</p>
       </a>
     </div>
-	<form  id="headerform" method="post" action="youtube.php" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
+	<form  id="headerform" method="GET" action="/info" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input type="text" autofocus name="query"class="form-control" placeholder="Search or Youtube Link">
+    <input type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
   </div>
   <button type="submit"class="btn btn-default">Submit</button>
 </form> 
@@ -76,7 +75,7 @@ cursor:pointer;
   border: none;
   color: white;
   width:100%;
-  padding: 15px 32px;
+  padding: 55px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
