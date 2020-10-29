@@ -48,7 +48,7 @@ cursor:pointer;
     </div>
     <form  id="headerform" method="GET" action="/info" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input type="text" autofocus name="sdl"class="form-control" placeholder="Search or Youtube Link">
+    <input type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
   </div>
   <button type="submit"class="btn btn-default">Submit</button>
 </form> 
@@ -62,7 +62,7 @@ cursor:pointer;
     <p align="center" class="lead">Get Any videos to your Devices !</p> <br>
         <form  role="search" method="GET" action="/info">
   <div class="form-group">
-    <input type="text"  class="form-control" name="sdl"placeholder="Search or Paste a Youtube Link">
+    <input type="text"  class="form-control" name="sdl"placeholder="Search or Paste a Video Link">
   </div>
   <button type="submit"class="btn btn-danger btn-block">Submit</button>
 </form>
