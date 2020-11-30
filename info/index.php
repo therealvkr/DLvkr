@@ -95,7 +95,7 @@ cursor:pointer;
 
 
 <div id="main">
-<a href="#" id="link"><button class="buttonz buttonz2"> GET info </button></a><br>
+<a href="#" id="link"><button class="buttonz buttonz2"> Click Here to GET info </button></a><br>
 </div>
 
 
