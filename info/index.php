@@ -5,7 +5,8 @@ $video_id = explode("?sdl=", $urlx);
 $video_id = $video_id[1];
 $lloc = urldecode($video_id);
 $llocf = urlencode($video_id);
- ?> 
+preg_match("/([\?&\/]vi?|embed|\.be)[\/=]([\w-]+)/",$lloc,$matches);
+?> 
  <html lang="en">
 <head>
   <title> DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..</title>
@@ -35,6 +36,7 @@ cursor:pointer;
 #searchdiv:hover{
 cursor:pointer;
 }
+
   </style>
 </head>
   
@@ -47,9 +49,9 @@ cursor:pointer;
    <p style="text-align:center;color:black;margin-top:-5px;"class="lead"> DLvkr</p>
       </a>
     </div>
-	<form  id="headerform" method="GET" action="/info" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
+	<form  id="headerform" method="GET" action="/sf.php" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
+    <input required type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
   </div>
   <button type="submit"class="btn btn-default">Submit</button>
 </form> 
@@ -88,13 +90,19 @@ cursor:pointer;
 }.buttonz2:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 </style>
 
 
-<center> <h2>DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..</h2></center>
+<center> <h2> Download <?php echo $lloc; ?> ..</h2></center>
 
 
 <div id="main">
+
+ <iframe frameBorder="0" width="100%" height="355"
+src="https://www.youtube.com/embed/<?php echo $matches[2]; ?>">
+</iframe> 
+
 <a href="#" id="link"><button class="buttonz buttonz2"> Click Here to GET info </button></a><br>
 </div>
 
@@ -163,6 +171,7 @@ html {
 .button:hover {
   background-color: #555;
 }
+
 </style>
 </head>
 <body>
@@ -176,7 +185,7 @@ html {
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        <p>example@example.com</p>
+
         <p><a href="https://facebook.com/theofficialvkr"><button class="button">Facebook</button></a></p>
       </div>
     </div>
@@ -189,7 +198,7 @@ html {
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        <p>example@example.com</p>
+
         <p><a href="https://twitter.com/theofficialvkr"><button class="button">Twitter</button></a></p>
       </div>
     </div>
@@ -202,7 +211,7 @@ html {
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        <p>example@example.com</p>
+
         <p><a href="https://instagram.com/theofficialvkr"><button class="button">instagram</button></a></p>
       </div>
     </div>
@@ -235,8 +244,22 @@ html {
    
   </div>
 
-<footer style=" height:30px; margin-top:10px;background-color:#F8F8F8;width: 100%;">
-<p style="padding-top:5px;" align="center">Powered By - <a href="https://facebook.com/theofficialvkr">Vijay Kumar </a> </p>
+<footer>
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+   z-index:9999999999999999999999999;
+}
+</style>
+<div class="footer">
+  <p>Powered By <a href="https://instagram.com/theofficialvkr">Vijay Kumar</a> &copy; All Right Reserved <?php echo date("Y");?> </p>
+</div>
 </footer>
 </div>
 

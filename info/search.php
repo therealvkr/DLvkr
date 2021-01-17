@@ -1,18 +1,19 @@
 <?php 
- error_reporting(0);
-$urlx = $_SERVER[REQUEST_URI];
+error_reporting(0); 
+$urlx = $_SERVER['REQUEST_URI'];
 $video_id = explode("?sdl=", $urlx);
 $video_id = $video_id[1];
-$lloc = urlencode($video_id);
+$lloc = urldecode($video_id);
 $llocf = urlencode($video_id);
-  if (empty($llocf)){
-  echo '<html lang="en">
+preg_match("/([\?&\/]vi?|embed|\.be)[\/=]([\w-]+)/",$lloc,$matches);
+?> 
+ <html lang="en">
 <head>
-  <title>DLvkr : PHP video & audio downloader from youtube..</title>
+  <title> DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..</title>
     <link rel="icon" href="/logo.png" type="image/png">
-    <meta name="author" content="theofficialvkr" />
-    <meta name="keywords"  content="DLvkr" />
-<meta name="description" content="DLvkr : PHP video & audio downloader from youtube..">
+    <meta name="author" content="itsmethevkr" />
+    <meta name="keywords"  content="DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats .." />
+<meta name="description" content="DLvkr : Download <?php echo $lloc; ?> in All available Quality and Formats ..">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,18 +36,20 @@ cursor:pointer;
 #searchdiv:hover{
 cursor:pointer;
 }
+
   </style>
 </head>
   
+ 
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
    <p style="text-align:center;color:black;margin-top:-5px;"class="lead"> DLvkr</p>
       </a>
     </div>
-    <form  id="headerform" method="GET" action="/info" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
+	<form  id="headerform" method="GET" action="/sf.php" style="border:none;border-shadow:none;" class="navbar-form navbar-right" role="search">
   <div class="form-group">
     <input required type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
   </div>
@@ -58,14 +61,61 @@ cursor:pointer;
 <div class="container">
 
   <div class="jumbotron">
-    <h1 style=" text-align:center;"><i style="color:#d9534f;"class="fa  fa-2x fa-youtube" aria-hidden="true"></i> Downloader</h1>
-    <p align="center" class="lead">Get YouTube videos to your Devices !</p> <br>
-        <form  role="search" method="GET" action="/sf.php">
+   
+   
+   
+   
+   
+   
+<script src="http://dlvnow.herokuapp.com/api/js/sv.js"></script> 
+<style>
+    #popup { display: none; position: fixed; top: 5%; left: 5%; width: 90%; height: 80%; background-color: white; z-index: 10; }
+#popup iframe { width: 100%; height: 100%; border: 0; }
+#popupdarkbg { position: fixed; z-index: 5; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,.75); display: none; }
+.buttonz {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  width:100%;
+  padding: 55px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+}.buttonz2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
+
+
+<center>
+    	<form  id="headerform" method="GET" action="/sf.php" style="border:none;border-shadow:none; width:100%;" class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input required type="text"  class="form-control" name="sdl"placeholder="Search or Paste a Video Link">
+    <input required type="text" autofocus name="sdl"class="form-control" placeholder="Search or Video Link">
   </div>
-  <button type="submit"class="btn btn-danger btn-block">Submit</button>
+ 
+  <br>
+  <input type="submit" class="btn btn-default" value="Submit" >
 </form>
+<br><h2> Download <?php echo $lloc; ?> ..</h2></center>
+
+
+<div id="main">
+
+
+<a href="#" id="link"><button class="buttonz buttonz2"> Click Here to GET info </button></a><br>
+</div>
+
+
+
+
+<br><br>
 
 <!DOCTYPE html>
 <html>
@@ -85,15 +135,6 @@ html {
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;
-}
-img[src*="000webhost"][style],
-body div:nth-last-of-type(1)[style]{
-  opacity: 0 !important;
-  pointer-events:none !important;
-  width: 0px !important;
-  height: 0px !important;
-  visibility:hidden !important;
-  display:none !important;
 }
 
 @media screen and (max-width: 650px) {
@@ -136,6 +177,7 @@ body div:nth-last-of-type(1)[style]{
 .button:hover {
   background-color: #555;
 }
+
 </style>
 </head>
 <body>
@@ -149,7 +191,7 @@ body div:nth-last-of-type(1)[style]{
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        
+
         <p><a href="https://facebook.com/theofficialvkr"><button class="button">Facebook</button></a></p>
       </div>
     </div>
@@ -162,7 +204,7 @@ body div:nth-last-of-type(1)[style]{
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        
+
         <p><a href="https://twitter.com/theofficialvkr"><button class="button">Twitter</button></a></p>
       </div>
     </div>
@@ -175,7 +217,7 @@ body div:nth-last-of-type(1)[style]{
         <h2>AnyThing</h2>
         <p class="title">AnyThing</p>
         <p>Put AnyThing Here.</p>
-        
+
         <p><a href="https://instagram.com/theofficialvkr"><button class="button">instagram</button></a></p>
       </div>
     </div>
@@ -184,6 +226,28 @@ body div:nth-last-of-type(1)[style]{
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<div id="popup"><iframe id="popupiframe"></iframe></div>
+<br><br><br><br>
+<div id="popupdarkbg"></div><script src="https://dlvnow.herokuapp.com/api/js/sv.js"></script><script src="//dlvnow.herokuapp.com/api/js/sv.js"></script>
+
+   
+   
+   
+   
+   
+   
+   
   </div>
 
 <footer>
@@ -200,13 +264,11 @@ body div:nth-last-of-type(1)[style]{
 }
 </style>
 <div class="footer">
-  <p>Powered By @TheOfficialVKr &copy; All Right Reserved <?php echo date("Y");?> </p>
+  <p>Powered By <a href="https://instagram.com/theofficialvkr">Vijay Kumar</a> &copy; All Right Reserved <?php echo date("Y");?> </p>
 </div>
 </footer>
 </div>
 
 </body>
 
-</html>';}
-else header("Location:/info?sdl=$llocf");
-?>
+</html>
