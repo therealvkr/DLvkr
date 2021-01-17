@@ -3,7 +3,9 @@ error_reporting(0);
 $urlx = $_SERVER['REQUEST_URI'];
 $video_id = explode("?sdl=", $urlx);
 $video_id = $video_id[1];
-$lloc = urldecode($video_id);
+$llock = urldecode($video_id);
+$lloc= strtok(urldecode($video_id), '?');
+
 $llocf = urlencode($video_id);
 preg_match("/([\?&\/]vi?|embed|\.be)[\/=]([\w-]+)/",$lloc,$matches);
 ?> 
